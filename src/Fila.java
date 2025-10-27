@@ -23,9 +23,9 @@ public class Fila {
 		StringBuilder builder = new StringBuilder();
 		
 		builder.append("\nLista de Espera:\n");
-		for (int i = 0; i < fila.size(); i++) {
+		for (Paciente paciente : fila) {
 			builder.append("[ ");
-			builder.append(fila.get(i).toString());
+			builder.append(paciente.toString());
 			builder.append(" ]\n");
 		}
 		

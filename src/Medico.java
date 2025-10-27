@@ -1,5 +1,6 @@
 
 public class Medico {
+	private int id;
 	private String nome;
 	private int idade;
 
@@ -9,6 +10,9 @@ public class Medico {
 	}
 
 	
+	public int getId() {
+		return id;
+	}
 	public String getNome() {
 		return nome;
 	}
@@ -16,7 +20,9 @@ public class Medico {
 		return idade;
 	}
 	
-
+	public void setId(int id) {
+		this.id = id;
+	}
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
