@@ -1,0 +1,97 @@
+@startuml
+
+class Medico {
+int crm
+String nome
+int idade
++ int getCrm()
++ String getNome()
++ int getIdade()
++ void setCrm(int)
++ void setNome(String)
++ void setIdade(int)
+}
+
+
+class Paciente {
+String nome
+int idade
+String corPrioridade
+LocalDateTime horarioChegada
+LocalDateTime horarioAtendimento
++ int prioridadeCor()
++ String getNome()
++ int getIdade()
++ String getCorPrioridade()
++ LocalDateTime getHorarioChegada()
++ LocalDateTime getHorarioAtendimento()
++ void setNome(String)
++ void setIdade(int)
++ void setCorPrioridade(String)
++ void setHorarioChegada(LocalDateTime)
++ void setHorarioAtendimento(LocalDateTime)
++ String toString()
+}
+
+
+class Atendimento {
+Paciente paciente
+Medico medico
+LocalDateTime horarioAtendimento
+String descricao
+int tempoAtendimento
++ Paciente getPaciente()
++ void setPaciente(Paciente)
++ Medico getMedico()
++ void setMedico(Medico)
++ LocalDateTime getHorarioAtendimento()
++ void setHorarioAtendimento(LocalDateTime)
++ String getDescricao()
++ void setDescricao(String)
++ int getTempoAtendimento()
++ void setTempoAtendimento(int)
++ String toString()
+}
+
+
+class Fila {
+List<Paciente> fila
+int[] qtd_classificacao
++ void addPaciente(Paciente)
++ Paciente removerPaciente()
++ String listaCompleta()
+}
+
+
+class Historico {
+Fila pacientesEspera
+List<Atendimento> atendimentos
++ void registrarAtendimento(Paciente,Medico,String,int)
++ String mostrarHistorico()
+}
+
+
+class GeraPaciente {
+{static} String[] NOMES
+{static} String[] CORES
+{static} Random random
++ {static} Paciente gerarPaciente()
++ {static} List<Paciente> gerarListaPacientes(int)
+}
+
+
+Atendimento "1" --> "1" Paciente : paciente[1]
+Atendimento "1" --> "1" Medico : medico[1]
+
+Fila "1" --> "0.." Paciente : fila[2]
+
+Historico "1" --> "1" Fila : pacientesEspera[2]
+Historico "1" --> "0.." Atendimento : atendimentos[2]
+GeraPaciente ..> Paciente : cria[1]
+GeraPaciente ..> List : retorna[1]
+GeraPaciente ..> Random : usa[1]
+
+
+
+
+@enduml
