@@ -1,17 +1,16 @@
-
 public class Medico {
-	private int id;
+	private int crm;
 	private String nome;
 	private int idade;
 
-	public Medico(String nome, int idade) {
+	public Medico(int crm, String nome, int idade) {
+		this.crm = crm;
 	    this.nome = nome;
 	    this.idade = idade;
 	}
 
-	
-	public int getId() {
-		return id;
+	public int getCrm() {
+		return crm;
 	}
 	public String getNome() {
 		return nome;
@@ -20,8 +19,8 @@ public class Medico {
 		return idade;
 	}
 	
-	public void setId(int id) {
-		this.id = id;
+	public void setCrm(int crm) {
+		this.crm = crm;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;

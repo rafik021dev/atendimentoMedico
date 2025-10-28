@@ -1,3 +1,5 @@
+import java.time.LocalDateTime;
+
 public class Atendimento {
 
 	private Paciente paciente;
@@ -14,7 +16,9 @@ public class Atendimento {
         this.tempoAtendimento = tempoAtendimento;
     }
 
-    //getters e setters
+    /*
+     * Getters e Setters
+     */
 
     public Paciente getPaciente() {
         return paciente;
@@ -62,7 +66,7 @@ public class Atendimento {
                 "Médico: " + medico.getNome() + "\n" +
                 "Horário: " + horarioAtendimento + "\n" +
                 "Descrição: " + descricao + "\n" +
-                "Tempo: " + tempoAtendimentoMinutos + " minutos\n";
+                "Tempo: " + tempoAtendimento + " minutos\n";
     }
 
 }
