@@ -62,7 +62,7 @@ public class Atendimento {
                 "Médico: " + medico.getNome() + "\n" +
                 "Horário: " + horarioAtendimento + "\n" +
                 "Descrição: " + descricao + "\n" +
-                "Tempo: " + tempoAtendimentoMinutos + " minutos\n";
+                "Tempo: " + tempoAtendimento + " minutos\n";
     }
 
 }
